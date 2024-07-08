@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarMatch</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styling/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1>StarMatch</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+            <form action="/" method="post" enctype="multipart/form-data">
+                <label for="file">Upload an image:</label>
+                <input type="file" id="file" name="file" accept="image/*">
+                <input type="submit" value="Submit">
+            </form>
+
+            {% if predicted_name %}
+            <h2>Original:</h2>
+            <img class="original" src="{{ url_for('static',  filename='/Saved_Images/Input_Image.jpg') }}" alt="Original Image">
+            <h2>You Look's Like:</h2>
+            <h2 class="highlight">{{ predicted_name }}</h2>
+            <img src="{{ url_for('static',  filename=''+predicted_img) }}" alt="Predicted Image">
+            {% endif %}
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p style="color: red;">{{ message }}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p> Face Matching with Celebrity</p>
+        </div>
+    </footer>
+</body>
+
+</html>

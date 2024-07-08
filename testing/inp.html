@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       /* Styling for file input */
+input[type="file"] {
+    margin-top: 10px;
+    padding: 12px;
+    border: 2px dashed #45a049; /* Dashed border with green color */
+    background-color: transparent; /* Transparent background */
+    color: #45a049; /* Green text color */
+    font-size: 1em;
+    border-radius: 5px;
+    outline: none; /* Remove default focus outline */
+    transition: border-color 0.3s, color 0.3s;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box; /* Ensure padding and border fit within element dimensions */
+}
+
+/* Hover effect */
+input[type="file"]:hover {
+    border-color: #3c824e; /* Darker green border on hover */
+}
+
+/* Focus effect */
+input[type="file"]:focus {
+    border-color: #3c824e; /* Darker green border on focus */
+}
+
+/* Disabled state */
+input[type="file"]:disabled {
+    color: #666; /* Darker gray text color */
+    cursor: not-allowed;
+    border-color: #ccc; /* Light gray border when disabled */
+}
+
+
+    </style>
+</head>
+<body>
+    <input type="file" id="file" name="file" accept="image/*">
+    
+</body>
+</html>
