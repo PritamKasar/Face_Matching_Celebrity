@@ -1,5 +1,6 @@
 pip==24.0
 tensorflow
+numpy
 keras
 keras-vggface
 keras_applications
